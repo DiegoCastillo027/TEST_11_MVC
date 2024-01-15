@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "oyhVE6bv++jp/pWJesuwHMeqGp1ermLwSJpm6yZjr7aeBsF0WdgBSabvZ5jHFzib6vt0ZW6kX3M4r8NkcaSLbA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\USER\\OneDrive\\Documentos\\EVALUACION\\PhotosProject\\PhotosProject\\PhotosProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\system.net.http.json\\6.0.0\\system.net.http.json.6.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "PhotosProject depende de System.Net.Http.Json (>= 5.0.1), pero no se encontró System.Net.Http.Json 5.0.1. Se resolvió una mejor coincidencia aproximada de System.Net.Http.Json 6.0.0.",
+      "libraryId": "System.Net.Http.Json",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}

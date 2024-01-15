@@ -1,0 +1,48 @@
+﻿@model PhotoViewModel
+
+@foreach (var photo in Model.Photos)
+{
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 10px;">
+        <h2 style="display: inline;">TITLE: @photo.Title</h2>
+        <img src="@photo.ThumbnailUrl" alt="@photo.Title" style="display: inline-block; float: right; margin-left: 5px;" />
+    </div>
+}
+
+
+<div style="text-align: center;">
+    <p style="display: inline-block;">
+        Items per page:
+        <input type="text" id="itemsPerPageTextbox" value="@Model.PageSize" readonly style="width: 30px;" />
+    </p>
+
+    <p style="display: inline-block; float: right;">
+        Page:
+        @if (Model.CurrentPage > 1)
+        {
+            <a href="@Url.Action("Index", new { page = 1, pageSize = Model.PageSize })">1</a>
+            <span>...</span>
+        }
+
+        @for (var i = Model.CurrentPage; i <= Model.CurrentPage + 4 && i <= Model.TotalPages; i++)
+        {
+            <a href="@Url.Action("Index", new { page = i, pageSize = Model.PageSize })">@i</a>
+        }
+
+        @if (Model.CurrentPage + 4 < Model.TotalPages)
+        {
+            <span>...</span>
+            <a href="@Url.Action("Index", new { page = Model.TotalPages, pageSize = Model.PageSize })">@Model.TotalPages</a>
+        }
+    </p>
+</div>
+
+
+
+@section scripts {
+    <script>
+        function changeItemsPerPage() {
+            var selectedValue = document.getElementById("itemsPerPage").value;
+            window.location.href = "@Url.Action("Index", new { page = 1, pageSize = "__value__" })".replace("__value__", selectedValue);
+        }
+    </script>
+}
